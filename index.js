@@ -20,7 +20,7 @@ const { Octokit, App, Action } = require("octokit");
       if(new Date(artifact.created_at) > new Date(latest.created_at)) latest = artifact;
     });
     artifacts.data.artifacts.forEach(async artifact => {
-      if(latest == artifact) continue;
+      if(latest == artifact) return;
       console.log(`Deleting ${artifact.id}`);
       try 
       {
