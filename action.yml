@@ -5,9 +5,11 @@ inputs:
     description: 'Shoulde last be remove'
     required: true
     default: false
+  repo-token:
+    description: 'Token required to list and delete artifacts'
+    required: true
+    default: "ERROR"
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'node12'
   main: 'index.js'
