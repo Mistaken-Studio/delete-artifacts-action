@@ -8,7 +8,7 @@ try {
   const owner = core.getInput('owner');
   const repo = core.getInput('repo');
   console.log(`leaveNewest: ${leaveNewest}!`);
-  request.get(`api.github.com/repos/${owner}/${repo}/actions/artifacts`, {}, (error, response, body) => {
+  request.get(`https://api.github.com/repos/${owner}/${repo}/actions/artifacts`, {}, (error, response, body) => {
     if(error) return core.setFailed(error);
     console.log(body);
   });
