@@ -14,8 +14,7 @@ jobs:
         id: hello
         with:
           leaveNewest: true
-          owner: Mistaken-Studio
-          repo: SL-Plugin
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
