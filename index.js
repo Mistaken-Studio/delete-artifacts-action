@@ -4,12 +4,10 @@ const { Octokit, App, Action } = require("octokit");
 (async () => {
   try 
   {
-    console.log(core);
     const leaveNewest = core.getInput('leaveNewest');
     const owner = github.context.repo.owner;
     const repo = github.context.repo.repo;
-    console.log(`leaveNewest: ${leaveNewest}!`);
-    const octokit = github.getOctokit(repo);
+    const octokit = github.getOctokit("GITHUB_TOKEN");
     let artifacts = await octokit.actions.listArtifactsForRepo({repo: repo, owner: owner});
     if(artifacts.data.total_count == 0) {
       console.log("Nothing to delete");
