@@ -9,7 +9,6 @@ inputs:
     description: 'Token required to list and delete artifacts'
     required: true
     default: "ERROR"
-outputs:
 runs:
   using: 'node12'
   main: 'index.js'
