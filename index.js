@@ -12,7 +12,7 @@ const github = require('@actions/github');
       console.log("Nothing to delete");
       return;
     }
-    let latest = artifacts[0];
+    let latest = artifacts.data.artifacts[0];
     if(leaveNewest) 
     {
       artifacts.data.artifacts.forEach(artifact => {
